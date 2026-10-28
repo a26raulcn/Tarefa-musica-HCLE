@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ed">
+  <meta name="description" content="Descobre os instrumentos de uma música. Ouve, isola e mistura quatro faixas num laboratório musical interativo.">
+  <title>Som em Camadas — Um laboratório para os teus ouvidos</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="audio.js" defer></script><script src="import.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Som em Camadas, início"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>som em camadas</a>
+    <nav aria-label="Navegação principal"><a href="#laboratorio">O laboratório <span aria-hidden="true">↗</span></a><a href="#como-funciona">Como funciona</a></nav>
+    <span class="school">IES SAN CLEMENTE <span>PROJETO EDUCATIVO · ASIR</span></span>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="tiny-star">✳</span> UM LABORATÓRIO PARA OS TEUS OUVIDOS</p>
+        <h1 id="hero-title">Uma música.<br>Quatro <em>descobertas.</em></h1>
+        <p class="intro">Por trás de uma música, há um mundo de sons.<br class="desktop"> Liga, desliga e descobre o papel de cada instrumento.</p>
+        <a class="hero-link" href="#laboratorio">Vamos ouvir <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="record-scene" aria-hidden="true">
+        <span class="orbit-label">OUVE O TODO. DESCOBRE AS PARTES.</span>
+        <div class="record-sleeve"><span>VOL. 01</span><div class="sleeve-lines"></div><b>QUATRO<br>EM UM.</b></div>
+        <div class="vinyl"><div class="vinyl-label"><span>som em<br><strong>camadas</strong></span><i></i><small>LADO A · 96 BPM</small></div></div>
+        <span class="record-star">✳</span><span class="record-caption">4 instrumentos. Infinitas combinações.</span>
+      </div>
+    </section>
+    <section class="lab wrap" id="laboratorio" aria-labelledby="lab-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / EXPLORAR</p><h2 id="lab-title">A tua mesa de mistura<span>.</span></h2></div><p>Uma só música, quatro perspetivas.<br>Escolhe o que queres ouvir.</p></div>
+      <div class="import-panel"><div><h3>Traz a tua música.</h3><p>Seleciona as quatro faixas no teu computador. Também podes substituir cada instrumento individualmente.</p></div><label class="import-all-label">＋ Importar 4 faixas<input class="file-input" id="import-all" type="file" multiple accept="audio/*,.mp3,.wav,.ogg,.m4a,.flac" aria-label="Importar quatro faixas de áudio"></label><span class="import-privacy">Funciona offline · Os ficheiros ficam no teu computador</span></div>
+      <div class="session-bar"><div><span class="status-dot"></span><strong id="session-title">Pequeno encontro</strong><span class="demo-tag" id="session-tag">DEMONSTRAÇÃO ORIGINAL</span></div><button class="text-button" id="reset-mix">Repor mistura <span aria-hidden="true">↺</span></button></div>
+      <p class="source-note" id="source-note">Importa as tuas quatro faixas para começar ou experimenta primeiro a música de demonstração.</p>
+      <div class="tracks" id="tracks"></div>
+      <section class="player" aria-label="Reprodutor geral">
+        <div class="transport"><button class="play-button" id="play" aria-label="Reproduzir todas as faixas"><span id="play-icon" aria-hidden="true">▶</span></button><button class="restart-button" id="restart" aria-label="Reiniciar a música" title="Reiniciar (R)">↺</button></div>
+        <div class="player-main"><div class="player-meta"><strong id="player-status">Tudo pronto para ouvir</strong><span><span id="current-time">0:00</span> <span class="time-divider">/</span> <span id="duration">0:20</span></span></div><label class="sr-only" for="seek">Posição na música</label><input id="seek" type="range" min="0" max="20" step="0.01" value="0" aria-valuetext="0 minutos, 0 segundos"></div>
+        <div class="player-right"><button class="loop-button" id="loop" aria-pressed="false" title="Repetir a música">↻ <span>Repetir</span></button><span class="active-count" id="active-count">4 de 4 a soar</span></div>
+      </section>
+      <div class="under-player"><span><span aria-hidden="true">↳</span> Todos os instrumentos partilham o mesmo ritmo e a mesma linha do tempo.</span><span class="keyboard-hint"><kbd>espaço</kbd> reproduzir / pausa</span></div>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+      <div class="discovery"><span class="discovery-symbol" aria-hidden="true">✳</span><div><p class="eyebrow">EXPERIMENTA ISTO</p><p id="challenge">Silencia um instrumento. O que muda na música quando ele desaparece?</p></div><button id="next-challenge" class="text-button">Outra ideia <span aria-hidden="true">→</span></button></div>
+    </section>
+    <section class="how wrap" id="como-funciona" aria-labelledby="how-title"><div class="section-heading"><div><p class="eyebrow">02 / À ESCUTA</p><h2 id="how-title">Aprende a ouvir de perto.</h2></div><span class="handwritten">A curiosidade dá o tom. ↙</span></div><div class="steps"><article><span>01</span><h3>Carrega no play.</h3><p>Ouve os quatro instrumentos em conjunto. Cada um ocupa o seu lugar na mesma música.</p></article><article><span>02</span><h3>Separa os sons.</h3><p>Usa o interruptor para silenciar uma faixa ou escolhe «Ouvir só este» para a escutar isoladamente.</p></article><article><span>03</span><h3>Encontra a tua mistura.</h3><p>Ajusta os volumes e volta a juntar os instrumentos. O que muda quando um deles desaparece?</p></article></div>
+      <details class="import-help"><summary>Tens as quatro faixas do exercício? <span aria-hidden="true">+</span></summary><div><p>Podes usar as tuas próprias pistas ou descarregar os ficheiros da <a href="https://drive.google.com/drive/folders/1-8_W0Nu_F0qw6VSzhLGvoFYOyRNqcVHu?usp=sharing" target="_blank" rel="noopener noreferrer">pasta indicada no enunciado ↗</a> e escolher «Importar 4 faixas». Na janela de seleção, usa Ctrl ou Cmd para selecionar os quatro ficheiros. Também podes usar «Carregar faixa» em cada instrumento. Os nomes conhecidos são reconhecidos automaticamente e podes editá-los nos cartões.</p><p>Usa ficheiros MP3, WAV, OGG ou M4A compatíveis com o teu navegador. As quatro gravações devem começar no mesmo ponto musical. A reprodução usa a duração da faixa mais longa; as mais curtas ficam em silêncio no fim. Depois da importação, prime reproduzir. Os ficheiros ficam apenas neste navegador e precisam de ser carregados novamente quando abrires a página noutro momento ou computador. Basta levar esta pasta e abrir index.html; não é necessário instalar nada.</p><button class="text-button" id="restore-demo">Voltar à demonstração <span aria-hidden="true">↺</span></button></div></details>
+    </section>
+  </main>
+  <footer class="wrap"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>som em camadas</a><p>Feito para descobrir. Criado para ouvir.</p><span>PORTUGUÊS · ASIR · 2026</span></footer>
+  <noscript><p class="wrap">Ativa o JavaScript no navegador para utilizar o laboratório musical.</p></noscript>
+</body>
+</html>
